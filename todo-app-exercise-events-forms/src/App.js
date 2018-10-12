@@ -6,7 +6,6 @@ const TodoItem = ({text}) => {
     <li>{text}</li>  
   );
 }
-
 class App extends Component {
   constructor(props) {
     super(props);
