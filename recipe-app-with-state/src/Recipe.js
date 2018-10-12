@@ -2,8 +2,12 @@ import React, {Component} from 'react';
 import './Recipe.css';
 
 class Recipe extends Component {
+  static defaultProps = {
+    onDelete: () => {}
+  }
+
   render() {
-    const {title, img, instructions} = this.props;
+    const {title, img, instructions, id, onDelete} = this.props;
     const ingredients = this.props.ingredients.map((ing, index) => (
       <li key={index}>{ing}</li> 
     ));
@@ -21,7 +25,7 @@ class Recipe extends Component {
           <h4>Instructions:</h4>
           <p>{instructions}</p>
         </div>
-        
+        <button type="button" className="delBtn" onClick={() => onDelete(id)}>DEL</button>
       </div>
     );
   }
