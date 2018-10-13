@@ -1,0 +1,9 @@
+.cardStyle {
+    width: 132px;
+    height: 132px;
+    border-radius: 10px;
+    border: solid 3px dimgray;
+    margin: 5px;
+    display: inline-block;
+    background-color: dimgray;
+}

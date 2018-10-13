@@ -1,26 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './NavBar.css';
 
 const someValidPath = "#"; //coloca um '#' nos links
 
-class NavBar extends Component {
-	static defaultProps = {
-		onShowForm() { }
-	}
+const NavBar = ({ onNewGame }) => (
+	<header>
+		<nav>
+			<div className="logo">Memory Game</div>
+			<div className="nav-links">
+				<li><a onClick={onNewGame} href={someValidPath}>Novo Jogo</a></li>
+			</div>
+		</nav>
+	</header>
+);
 
-	render() {
-		
-		return (
-			<header>
-				<nav>
-					<div className="logo">Memory Game</div>
-					<div className="nav-links">
-						<li><a onClick="" href={someValidPath}>Novo Jogo</a></li>
-					</div>
-				</nav>
-			</header>
-		);
-	}
+NavBar.propTypes = {
+	onNewGame: PropTypes.func.isRequired
 }
 
 export default NavBar;

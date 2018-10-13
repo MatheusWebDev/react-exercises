@@ -1,17 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import './Card.css';
 
-const Card = props => {
-  const styleBoxes = {
-    width: '132px',
-    height: '132px',
-    borderRadius: '10px',
-    border: 'solid 3px dimgray',
-    margin: '5px',
-    display: 'inline-block',
-    backgroundColor: 'dimgray'
+const Card = (props) => {
+  let style = {};
+  if (props.showing) {
+    style.backgroundColor = props.backgroundColor;
   }
-
-  return (<div style={styleBoxes} onClick={() => props.onClick} />);
+  return (
+    <div
+      className="cardStyle"
+      style={style}
+      onClick={props.onClick} 
+    />
+  );
 };
+
+Card.propTypes = {
+  showing: PropTypes.bool.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
+}
 
 export default Card;
