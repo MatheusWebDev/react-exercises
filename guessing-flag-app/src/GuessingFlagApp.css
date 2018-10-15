@@ -1,0 +1,18 @@
+.flagBox {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+}
+
+.flagBox img {
+  width: 600px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form div{
+  margin: 0 10px;
+}
